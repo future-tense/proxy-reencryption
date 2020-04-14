@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "removeComments": true,
+    "stripInternal": true,
+
+//    "noImplicitAny": true,
+//    "strictNullChecks": true,
+//    "strictFunctionTypes": true,
+//    "strictPropertyInitialization": true,
+//    "noImplicitThis": true,
+//    "noUnusedLocals": true,
+//    "noUnusedParameters": true,
+//    "noImplicitReturns": true,
+//    "noFallthroughCasesInSwitch": true,
+
+    "declaration": false,
+    "sourceMap": false,
+    "target": "es2017",
+    "esModuleInterop": true,
+    "moduleResolution": "Node",
+
+    "lib": [
+      "es6"
+    ]
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+//    "test/**/*.ts"
+  ]
+}
