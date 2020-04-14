@@ -58,12 +58,12 @@ export class PRE {
     P: Point;   //  public key
 
     constructor(
-        privateKey: Scalar,
+        privateKey: Buffer,
         curve: Curve
     ) {
         this.curve = curve;
-        this.x = privateKey;
-        this.P = this.curve.basepoint.mul(privateKey);
+        this.x = this.curve.scalarFromBuffer(privateKey);
+        this.P = this.curve.basepoint.mul(this.x);
     }
 
     async selfEncrypt(msg: Buffer, tag: Buffer): Promise<EncryptedMessage> {

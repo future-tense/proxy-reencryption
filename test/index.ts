@@ -12,7 +12,7 @@ test('re-encrypt', async (t) => {
     const bob = curve.basepoint.mul(bobKey).toBuffer();
 
     //  `alice` self-encrypts file
-    const alicePre = new PRE(aliceKey, curve);
+    const alicePre = new PRE(aliceKey.toBuffer(), curve);
     const res = await alicePre.selfEncrypt(data, tag);
 
     //  `alice` re-keys the file for `bob`
@@ -22,7 +22,7 @@ test('re-encrypt', async (t) => {
     const rem = PRE.reEncrypt(bob, res, reKey, curve);
 
     //  `bob` decrypts it
-    const bobPre = new PRE(bobKey, curve);
+    const bobPre = new PRE(bobKey.toBuffer(), curve);
     const data2 = await bobPre.reDecrypt(rem);
     t.true(data.compare(data2) === 0);
 });
