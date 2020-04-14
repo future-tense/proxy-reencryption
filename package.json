@@ -2,7 +2,9 @@
   "name": "@futuretense/proxy-reencryption",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "lib/commonjs/index.js",
+  "browser": "lib/esm/browser.js",
+  "types": "lib/index.d.ts",
   "files": [
     "lib"
   ],
